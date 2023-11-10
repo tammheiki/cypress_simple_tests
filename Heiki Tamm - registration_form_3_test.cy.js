@@ -103,9 +103,10 @@ cy.visit('cypress/fixtures/registration_form_3.html')
     // Select a city 
     cy.get('#city').select('Madrid');
 
-    cy.get('h1').contains('Registration page').click()
+    // cy.get('#city').should('be.disabled'); //NOTE : I AM UNABLE TO SOLVE THIS. I HAVE NO IDEA HOW TO DISABLE IT.
+    //I REALLY WANT TO KNOW/SEE HOW TO DO IT. :)
 
-    cy.get('#country').select('Estonia');
+    cy.get('h1').contains('Registration page').click()
 
     })
 

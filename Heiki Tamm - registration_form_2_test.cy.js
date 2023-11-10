@@ -12,7 +12,7 @@
     
     
         describe('Section 1: Functional tests', () => {  
-        it.only('User can use only same both first and validation passwords', ()=>{
+        it('User can use only same both first and validation passwords', ()=>{
 
         // Add test steps for filling in only mandatory fields
         cy.get('#username').type(username);
@@ -20,12 +20,10 @@
         cy.get('input[placeholder="John"]').type('John');
         cy.get('input[placeholder="Smith"]').type('Smith');
         cy.get('[data-testid="phoneNumberTestId"]').type('123456789');
-      
 
         // Type confirmation password which is different from first password
         cy.get('input[name="password"]').type('Password123');
         cy.get('[name="confirm"]').type(password);
-        
 
         // Assert that submit button is not enabled
         cy.get('h2').contains('Password').click();
@@ -36,11 +34,6 @@
 
         // Assert that error message is visible
         cy.get('#password_error_message').should('be.visible').should('contain', 'Passwords do not match!');
-
-         
-      
-      
-        
        
     })
 
